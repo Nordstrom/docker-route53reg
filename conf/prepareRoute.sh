@@ -1,6 +1,6 @@
 #!/bin/sh
 
-eth0_ip=`ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{print $1}'`
+eth0_ip=`ip route | awk '/scope/ { print $9 }'`
 target_ip="${IP_ADDRESS:-$eth0_ip}"
 domain_name="${DOMAIN_NAME:?"must be set"}"
 zone_id="${ROUTE53_ZONE_ID:?"must be set"}"

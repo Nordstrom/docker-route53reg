@@ -1,6 +1,6 @@
-FROM nordstrom/awscli:latest
+FROM nordstrom/awscli
 MAINTAINER Innovation Platform Team "invcldtm@nordstrom.com"
 
-COPY conf/* /templates/
+COPY conf /
 
-ENTRYPOINT ["/templates/prepareRoute.sh"]
+ENTRYPOINT ["/prepareRoute.sh"]
