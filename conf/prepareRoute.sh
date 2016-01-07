@@ -7,8 +7,8 @@ zone_id="${ROUTE53_ZONE_ID:?"must be set"}"
 
 sed -e "s/;domain_name;/${domain_name}/g" \
     -e "s/;target_ip;/${target_ip}/g" \
-    /templates/route.json.tmpl > /templates/route.json
+    /templates/route.json.tmpl > /route.json
 
 /usr/local/bin/aws route53 change-resource-record-sets \
     --hosted-zone-id ${zone_id} \
-    --change-batch file:///templates/route.json
+    --change-batch file:///route.json
