@@ -12,3 +12,7 @@ sed -e "s|\$${DOMAIN_NAME}|${domain_name}|g" \
 /usr/local/bin/aws route53 change-resource-record-sets \
     --hosted-zone-id ${zone_id} \
     --change-batch file:///route.json
+
+if [[ -z "$1" ]]; do
+    exec "$@"
+fi
