@@ -3,10 +3,10 @@
     "Changes": [{
         "Action": "UPSERT",
         "ResourceRecordSet": {
-            "Name": ";domain_name;.",
+            "Name": "${DOMAIN_NAME}.",
             "Type": "A",
             "ResourceRecords": [{
-                "Value": ";target_ip;"
+                "Value": "${TARGET_IP}"
             }],
             "TTL": 10
         }
