@@ -14,5 +14,13 @@ sed -e "s|\${DOMAIN_NAME}|${domain_name}|g" \
     --change-batch file:///route.json
 
 if [ -n "$1" ]; then
-    exec "$@"
+    echo "Executing '$@'"
+    eval "$@"
+fi
+
+if [ -n "$PREVENT_TERMINATION" ]; then
+    echo "Preventing termination."
+    while true; do
+      sleep 1000000
+    done
 fi
