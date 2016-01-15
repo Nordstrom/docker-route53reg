@@ -13,6 +13,6 @@ sed -e "s|\${DOMAIN_NAME}|${domain_name}|g" \
     --hosted-zone-id ${zone_id} \
     --change-batch file:///route.json
 
-if [[ -z "$1" ]]; then
+if [ -n "$1" ]; then
     exec "$@"
 fi
