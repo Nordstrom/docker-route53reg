@@ -1,6 +1,6 @@
 #!/bin/sh
 
-eth0_ip=`ip route | awk '/scope/ { print $9 }'`
+eth0_ip=`ip route | awk '/dev eth0  proto kernel/ {print $9}'`
 target_ip="${IP_ADDRESS:-$eth0_ip}"
 domain_name="${DOMAIN_NAME:?"must be set"}"
 zone_id="${ROUTE53_ZONE_ID:?"must be set"}"
