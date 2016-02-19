@@ -1,4 +1,4 @@
-FROM nordstrom/awscli
+FROM nordstrom/awscli:1.10
 MAINTAINER Innovation Platform Team "invcldtm@nordstrom.com"
 
 COPY prepareRoute.sh /bin/
